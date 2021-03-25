@@ -30,7 +30,7 @@
            ],
            target: 'map',
            view: new ol.View({
-               center: ol.proj.fromLonLat([-96.6607, 40.8073]),
+               center: ol.proj.fromLonLat([-96.699643, 40.808745]),
                maxZoom: 18,
                zoom: 11
            })
@@ -39,7 +39,7 @@
      source: new ol.source.Vector({
          features: [
              new ol.Feature({
-                 geometry: new ol.geom.Point(ol.proj.fromLonLat([-96.6607, 40.8073]))
+                 geometry: new ol.geom.Point(ol.proj.fromLonLat([-96.699643, 40.808745]))
              })
          ]
      })
@@ -75,7 +75,7 @@
      }
  });
  content.innerHTML = '<b>Nebraska State Capitol</b><br />';
-  overlay.setPosition(ol.proj.fromLonLat([40.808745, -96.699643]));
+  overlay.setPosition(ol.proj.fromLonLat([-96.699643, 40.808745]));
 
 
 </script>
