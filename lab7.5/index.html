@@ -34,7 +34,7 @@ attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a hre
 			maxZoom: 20,
 			ext: 'png'
 			}).addTo(map);
-      $.getJSON("wdhelmer.github.io/lab7.5/2020.geojson")
+      $.getJSON("https://github.com/wdhelmer/wdhelmer.github.io/blob/main/lab7.5/2020.geojson")
                   .done(function(data) {
                       var info = processData(data);
                       createPropSymbols(info.timestamps, data);
