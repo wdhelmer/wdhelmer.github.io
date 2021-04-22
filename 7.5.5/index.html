@@ -43,7 +43,7 @@
           if (feature.properties) {
             var prop = feature.properties;
             // make a cool little html popup with properties
-              var popup = '<h3>'+prop['FNAME']+' '+prop['LNAME']+'</h3>'+'<strong>Race/Gender: </strong>'+prop['RACE']+' '+prop['GENDER']+'<br><strong>Occupation: </strong>'+prop['OCCUPATION']+'<br><strong>Age: </strong>'+prop['AGE']+'<br><strong>Family Estate: $</strong>'+prop['PERSREAL']+'<br> <strong>Fam. Real Estate: $</strong>'+prop['FAMREAL']+'<br><strong>Address: </strong>'+prop['ADDRESS']+'<br><br><i>details from Census Bureau and city directories</i>';
+              var popup = prop['name'];
               // add known info about event to the description
 
             // you must create a layer property on each feature or else
