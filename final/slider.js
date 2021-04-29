@@ -1,5 +1,5 @@
 L.Control.SliderControl=L.Control.extend({options:{position:"bottomright",
-layers:null,timeAttribute:'Date Const',isEpoch:false,maxValue:-1,minValue:-1,markers:null,range:!1,follow:!1},
+layers:null,timeAttribute:'Date Const',isEpoch:false,maxValue:2021,minValue:-1,markers:null,range:!1,follow:!1},
 initialize:function(a){L.Util.setOptions(this,a),this._layer=this.options.layer},
 setPosition:function(a){var b=this._map;return b&&b.removeControl(this),
 this.options.position=a,b&&b.addControl(this),this.startSlider(),this},
