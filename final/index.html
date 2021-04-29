@@ -43,7 +43,8 @@
           if (feature.properties) {
             var prop = feature.properties;
             // make a cool little html popup with properties
-              var popup = prop['Theater Na'+ '<br/>' + 'Date close'];
+              var popup = prop['Theater Na'] + '<h3>' + prop['Date close'];
+
               // add known info about event to the description
 
             // you must create a layer property on each feature or else
@@ -54,11 +55,11 @@
         }; // end onEachFeature
         var blueCircleMarkers = {
                radius: 6,
-               fillColor: "#00AEEF",
-               color: "#3978BF",
+               fillColor: "#FF4233",
+               color: "#FF4233",
                weight: 1,
-               opacity: 0.8,
-               fillOpacity: 0.5
+               opacity: 0,
+               fillOpacity: 0
              };
        var orangeCircleMarkers = {
                radius: 5,
@@ -82,7 +83,8 @@
                onEachFeature: onEachFeature,
                pointToLayer: function(feature, latlng) {
                  return L.circleMarker(latlng, blueCircleMarkers);
-               }
+               },
+
              }).addTo(map);
 
              var timelineLayer = L.geoJson(data, {
@@ -108,29 +110,7 @@
               map.addControl(sliderControl);
               sliderControl.startSlider(); // initialize
 
-              var searchOptions = {
-                position: 'topleft',
-                title: 'Search',
-                placeholder: 'Example: John Smith',
-                maxResultLength: 10,
-                caseSensitive: false,
-                showInvisibleFeatures: true,
-                layerToToggle: searchLayer,
-                threshold: 0.5, // default is .5, will match imperfect results
-                showResultFct: function(feature, container) {
-                  props = feature.properties;
-                  var name = L.DomUtil.create('b', null, container);
-                  name.innerHTML = props.LNAME;
-                  container.appendChild(L.DomUtil.create('br', null, container));
-
-                  var cat = props.LNAME ? props.FNAME : props.OCCUPATION,
-                      info = cat;
-                  container.appendChild(document.createTextNode(info));
-                }
-              };
-              var searchControl = L.control.fuseSearch(searchOptions);
-              map.addControl(searchControl);
-              searchControl.indexFeatures(data, ['Theater Na']);
+              
 
               displayFeatures(data, searchLayer);
 
